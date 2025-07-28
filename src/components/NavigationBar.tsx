@@ -10,15 +10,15 @@ const NavigationBar = () => {
   ]
 
   return (
-    <nav className="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-end space-x-6">
-      <div className="text-2xl font-bold text-red-700 mr-auto">B</div>
+<nav className="bg-beige border-b border-brown px-4 py-3 flex items-center justify-end space-x-6">
+      <div className="text-2xl font-bold text-brown mr-auto">B</div>
       {navItems.map((item) => (
         <NavLink
           key={item.name}
           to={item.to}
           className={({ isActive }) =>
-            `text-gray-700 hover:text-red-700 px-3 py-1 rounded ${
-              isActive ? 'bg-red-100 font-semibold' : ''
+            `text-brown hover:text-brown/80 px-3 py-1 rounded ${
+              isActive ? 'bg-brown/20 font-semibold' : ''
             }`
           }
         >
@@ -27,13 +27,13 @@ const NavigationBar = () => {
       ))}
       <NavLink
         to="/signin"
-        className="px-3 py-1 rounded bg-gray-200 text-gray-700 hover:bg-gray-300"
+        className="px-3 py-1 rounded bg-brown/20 text-brown hover:bg-brown/30"
       >
         Sign in
       </NavLink>
       <NavLink
         to="/register"
-        className="px-3 py-1 rounded bg-gray-800 text-white hover:bg-gray-900"
+        className="px-3 py-1 rounded bg-brown text-beige hover:bg-brown/90"
       >
         Register
       </NavLink>
