@@ -1,8 +1,8 @@
-
 import CategoryItem from "./components/CategoryItem";
 import { useEffect } from 'react';
 import { useProductStore } from './stores/useProductStore';
 import FeaturedProducts from './components/FeaturedProducts';
+import VideoCarousel from './components/VideoCarousel';
 
 const categories = [
     { href: "/weddings", name: "Weddings", imageUrl: "" },
@@ -20,6 +20,12 @@ const categories = [
     { href: "/pre-wedding-shoots", name: "Pre-wedding shoots", imageUrl: "" },
 ]
 
+const services = [
+    { href: "/service1", name: "Service 1", imageUrl: "" },
+    { href: "/service2", name: "Service 2", imageUrl: "" },
+    { href: "/service3", name: "Service 3", imageUrl: "" },
+]
+
 const HomePage = () => {
     const { fetchFeaturedProducts, products, isLoading } = useProductStore()
 
@@ -29,11 +35,29 @@ const HomePage = () => {
 
     return (
         <div className='relative min-h-screen bg-beige text-brown overflow-hidden'>
-            <header className='bg-brown text-beige p-4 text-center text-4xl font-bold'>Naandi</header>
+            <section className='relative bg-gray-100 py-12 px-4 text-center rounded shadow mb-8'>
+                <h1 className='text-5xl font-extrabold mb-2'>Naandi</h1>
+                <p className='text-lg mb-4'>Tagline</p>
+                <VideoCarousel />
+                <button className='mt-6 px-6 py-2 bg-brown text-beige rounded hover:bg-brown/90 transition'>Explore</button>
+            </section>
 
-            <section className='text-center py-8'>
-                <h2 className='text-2xl font-semibold mb-2'>Tagline</h2>
-                <button className='mt-2 px-4 py-2 bg-brown text-beige rounded hover:bg-brown/90 transition'>Explore</button>
+            <section className='py-8 px-4'>
+                <h3 className='text-xl font-bold mb-4'>Services</h3>
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
+                    {services.map((service) => (
+                        <CategoryItem key={service.name} {...service} />
+                    ))}
+                </div>
+            </section>
+
+            <section className='py-8 px-4'>
+                <h3 className='text-xl font-bold mb-4'>Categories</h3>
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
+                    {categories.map((category) => (
+                        <CategoryItem key={category.name} {...category} />
+                    ))}
+                </div>
             </section>
 
             <section className='py-8 px-4'>
