@@ -46,12 +46,12 @@ const VideoCarousel = () => {
   const currentVideo = videos[currentIndex]
 
   return (
-    <section className="relative py-8 px-4 bg-gray-100 rounded shadow">
+    <section className="relative py-8 px-4 bg-gray-100 rounded-lg shadow font-josefin">
       <div className="flex items-center justify-center">
         <button
           onClick={prev}
           aria-label="Previous video"
-          className="text-2xl font-bold px-3 py-1 rounded hover:bg-gray-300"
+          className="text-2xl font-bold px-3 py-1 rounded-lg hover:bg-gray-300"
         >
           &#9664;
         </button>
@@ -59,14 +59,14 @@ const VideoCarousel = () => {
           key={currentVideo.id}
           src={currentVideo.url}
           controls
-          className="w-full max-w-3xl h-64 rounded shadow mx-4"
+          className="w-full max-w-3xl h-64 rounded-lg shadow mx-4"
         >
           Your browser does not support the video tag.
         </video>
         <button
           onClick={next}
           aria-label="Next video"
-          className="text-2xl font-bold px-3 py-1 rounded hover:bg-gray-300"
+          className="text-2xl font-bold px-3 py-1 rounded-lg hover:bg-gray-300"
         >
           &#9654;
         </button>
