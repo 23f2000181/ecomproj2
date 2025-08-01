@@ -13,9 +13,9 @@ const CategoryItem = ({ href, name, imageUrl }: CategoryItemProps) => {
             className="block group"
             aria-label={`View ${name} category`}
         >
-            <div className="bg-white p-4 rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
+            <div className="bg-white p-4 rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105 font-josefin">
                 {/* Optional: Add img tag if imageUrl exists */}
-                <div className="h-32 bg-gray-200 rounded mb-2">
+                <div className="h-32 bg-gray-200 rounded-lg mb-2">
                     {imageUrl && (
                         <img
                             src={imageUrl}

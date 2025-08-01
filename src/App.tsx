@@ -1,9 +1,11 @@
-import { Routes, Route } from 'react-router-dom'
-import HomePage from './HomePage'
-import WeddingsPage from './pages/WeddingsPage'
-import ServicesPage from './pages/ServicesPage'
-import CategoriesPage from './pages/CategoriesPage'
-import NavigationBar from './components/NavigationBar'
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './HomePage';
+import WeddingsPage from './pages/WeddingsPage';
+import ServicesPage from './pages/ServicesPage';
+import CategoriesPage from './pages/CategoriesPage';
+import VendorPage from './pages/VendorPage';
+import VendorProfilePage from './pages/VendorProfilePage';
+import NavigationBar from './components/NavigationBar';
 
 function App() {
   return (
@@ -14,10 +16,11 @@ function App() {
         <Route path="/weddings" element={<WeddingsPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/categories" element={<CategoriesPage />} />
-        {/* Add other routes as needed */}
+        <Route path="/vendor" element={<VendorPage />} />
+        <Route path="/vendor/:id" element={<VendorProfilePage />} />
       </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
