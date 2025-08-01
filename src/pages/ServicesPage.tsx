@@ -41,16 +41,6 @@ export default function ServicesPage() {
       if (isNaN(budgetNum) || vendor.price > budgetNum) return false;
     }
 
-    if (filters.location) {
-      // Assuming vendor has a location property, but dummy data doesn't have it.
-      // For now, skip location filtering or add location to dummy data if needed.
-      // We'll skip filtering by location as dummy data lacks location.
-    }
-
-    if (filters.language) {
-      // No language property in dummy data, so skip filtering by language.
-    }
-
     if (filters.date) {
       if (!vendor.availability.includes(filters.date)) return false;
     }

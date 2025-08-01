@@ -1,11 +1,11 @@
-import { Routes, Route } from 'react-router-dom'
-import HomePage from './HomePage'
-import WeddingsPage from './pages/WeddingsPage'
-import ServicesPage from './pages/ServicesPage'
-import CategoriesPage from './pages/CategoriesPage'
-import VendorProfilePage from './pages/VendorProfilePage'
-import VendorPage from './pages/VendorPage'
-import NavigationBar from './components/NavigationBar'
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './HomePage';
+import WeddingsPage from './pages/WeddingsPage';
+import ServicesPage from './pages/ServicesPage';
+import CategoriesPage from './pages/CategoriesPage';
+import VendorPage from './pages/VendorPage';
+import VendorProfilePage from './pages/VendorProfilePage';
+import NavigationBar from './components/NavigationBar';
 
 function App() {
   return (
@@ -18,10 +18,9 @@ function App() {
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/vendor" element={<VendorPage />} />
         <Route path="/vendor/:id" element={<VendorProfilePage />} />
-        {/* Add other routes as needed */}
       </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

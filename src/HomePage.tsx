@@ -6,24 +6,29 @@ import VideoCarousel from './components/VideoCarousel';
 import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
-    const { fetchFeaturedProducts, products, isLoading } = useProductStore()
+    const { fetchFeaturedProducts, products, isLoading } = useProductStore();
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetchFeaturedProducts()
-    }, [fetchFeaturedProducts])
+        fetchFeaturedProducts();
+    }, [fetchFeaturedProducts]);
 
     const handleExploreClick = () => {
         navigate('/services');
     }
 
     return (
-    <div className='relative min-h-screen bg-beige text-brown overflow-hidden font-josefin'>
-                <section className='relative bg-gray-100 py-12 px-4 text-center rounded-lg shadow mb-8'>
+        <div className='relative min-h-screen bg-beige text-brown overflow-hidden font-josefin'>
+            <section className='relative bg-gray-100 py-12 px-4 text-center rounded-lg shadow mb-8'>
                 <h1 className='text-5xl font-extrabold mb-2'>Naandi</h1>
                 <p className='text-lg mb-4'>Tagline</p>
                 <VideoCarousel />
-                <button onClick={handleExploreClick} className='mt-6 px-6 py-2 bg-brown text-beige rounded-lg hover:bg-brown/90 transition'>Explore</button>
+                <button
+                    onClick={handleExploreClick}
+                    className='mt-6 px-6 py-2 bg-brown text-beige rounded-lg hover:bg-brown/90 transition'
+                >
+                    Explore
+                </button>
             </section>
 
             <section className='py-8 px-4'>
@@ -81,13 +86,14 @@ const HomePage = () => {
                 </div>
             </section>
 
-                <footer className='bg-brown text-beige py-6 px-4 text-center rounded-lg'>
+            <footer className='bg-brown text-beige py-6 px-4 text-center rounded-lg'>
                 <p className='text-sm'>© 2025 Naandi. All rights reserved.</p>
             </footer>
 
             <FeaturedProducts featuredProducts={products} />
         </div>
-    )
+    );
 }
 
-export default HomePage
+export default HomePage;
+
